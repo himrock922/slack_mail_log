@@ -22,6 +22,9 @@ Style/Documentation:
 Metrics/AbcSize:
   Max: 40
 
+Metrics/MethodLength:
+  Max: 15
+
 Layout/AccessModifierIndentation:
   Enabled: true
 
