@@ -5,6 +5,7 @@ module SlackParameterList
   SLACK_URI = 'https://slack.com/api/'
   API_TOKEN = ''
   CONVERSATIONS_LIST = 'conversations.list?'
+  USERS_LIST = 'users.list?'
 end
 
 SlackParameterList.freeze
