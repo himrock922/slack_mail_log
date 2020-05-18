@@ -7,15 +7,20 @@ require 'fileutils'
 require 'optparse'
 require 'optparse/date'
 $LOAD_PATH << '.'
-require 'fetch_conversations_list'
+require 'fetch_slack_info_list'
+require 'slack_parameter_list'
+
 class SlackMailLog
+  include SlackParameterList
   def initialize
     params = {}
     begin
       OptionParser.new do |opts|
         opts.on('-d ', '--date', Date)
       end.parse!(ARGV, into: params)
-      FetchConversationsList.new
+      fetch_slack_info_list = FetchSlackInfoList.new
+      fetch_slack_info_list.extract_conversations_list(CONVERSATIONS_LIST)
+      fetch_slack_info_list.extract_users_list(USERS_LIST)
     rescue OptionParser::InvalidArgument => e
       p "#{e.message} 不正な入力です。"
     rescue OptionParser::MissingArgument => e
