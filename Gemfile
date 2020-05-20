@@ -3,5 +3,4 @@
 source 'https://rubygems.org'
 gem 'pry'
 gem 'rubocop'
-gem 'test-unit'
-gem 'webmock'
+gem 'parallel'
